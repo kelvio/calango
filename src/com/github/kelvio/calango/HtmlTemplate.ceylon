@@ -5,7 +5,7 @@ shared abstract class HtmlTemplate() extends Template() {
 
 	Html html => createHtml();
 
-	"This template rendered"
+	
 	shared actual String rendered => html.string;
 	
 	"This method is used to create the html template content. Subclasses will typically override this method."
