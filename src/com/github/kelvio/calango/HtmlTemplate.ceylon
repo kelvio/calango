@@ -1,7 +1,7 @@
 import ceylon.html { Html }
 
 "Represents a empty html template. Html-based templates can extends this class."
-shared abstract class HtmlTemplate() extends Template() {
+shared class HtmlTemplate() extends Template() {
 
 	Html html => createHtml();
 

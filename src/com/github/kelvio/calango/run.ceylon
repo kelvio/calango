@@ -1,4 +1,4 @@
-import ceylon.html { Html, Head, Body, Doctype, H1 }
+import ceylon.html { Html, Head, Body, H1 }
 
 "Run the module `com.github.kelvio.calango`."
 shared void run() {
