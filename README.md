@@ -21,9 +21,7 @@ You certainly want each template has a specific content.
 The template has a class called createHtml() method that you can override to create the template content.
 
 import ceylon.html { Html }
-
 class MyBaseTemplate() extends HtmlTemplate() {
-
 	shared actual Html createHtml() {
 		return Html {};
 	}
@@ -32,9 +30,7 @@ class MyBaseTemplate() extends HtmlTemplate() {
 If you need to customize specific elements of your template, you can delegate this task to a method whatsoever.
 
 import ceylon.html { Html, Head, Body }
-
 class MyBaseTemplate() extends HtmlTemplate() {
-	
 	shared actual Html createHtml() {
 		return Html { 
 			head = createHead(); 
@@ -55,33 +51,24 @@ class MyBaseTemplate() extends HtmlTemplate() {
 You can also extend templates and customize the base template:
 
 import ceylon.html { Html, Head, Body, H1 }
-
 class Index(String title) extends MyBaseTemplate() {
-
-
 	shared actual Head createHead() {
 		return Head { title = title; id = "myId"; headChildren = empty; };
-	}
-	
+	}	
 	shared actual Body createBody() {
-		return Body { children = [ H1 { text = "MyBodyHeader"; } ]; };
-		
+		return Body { children = [ H1 { text = "MyBodyHeader"; } ]; };	
 	}
-
 }
 
 You can get the contents of a template rendered by obtaining the value of the property "rendered", as follows:
 
 shared void run() {
-	
 	print(Index("Hello").rendered);
-	
 }
 
 This will generate the following output:
 
 <!DOCTYPE html>
-
 <html id="myHtml">
     <head id="myId">
         <title>
